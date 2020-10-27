@@ -1,0 +1,25 @@
+{
+  "name": "homework10_Employee_Management_System",
+  "version": "1.0.0",
+  "description": "### Description of the Project:",
+  "main": "employeeData.js",
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkBrazee/homework10_Employee_Management_System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkBrazee/homework10_Employee_Management_System/issues"
+  },
+  "homepage": "https://github.com/MarkBrazee/homework10_Employee_Management_System#readme"
+}

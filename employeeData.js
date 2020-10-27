@@ -71,7 +71,7 @@ var connection = mysql.createConnection({
   });
   
   function afterConnection() {
-    connection.query("SELECT * FROM products", function(err, res) {
+    connection.query("SELECT * FROM ", function(err, res) {
       if (err) throw err;
       console.log(res);
       connection.end();

@@ -22,7 +22,7 @@ CREATE TABLE role (
   
   roleTitle VARCHAR(30),
   
-  salary INT(10),
+  salary DECIMAL(10,2),
   deptId INT NOT NULL,
   PRIMARY KEY (roleId)
 );
