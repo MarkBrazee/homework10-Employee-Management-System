@@ -79,6 +79,7 @@ var connection = mysql.createConnection({
   }
 
 // Write code to use inquirer to gather information about the development team members
+//=================================================
 
 // Array of questions for each employee
     // Department Name
@@ -145,7 +146,7 @@ var connection = mysql.createConnection({
     {
         type: "input",
         message: "What is your Manager's Id number?",
-        number: "mgrIdNum",
+        number: "mgrId",
         },
 
 ];
@@ -169,15 +170,15 @@ function init() {
         employeeId,
         firstName,
         lastName,
-        mgrIdNum
+        mgrId
     }) => {
 
-        console.log(name, deptId, roleId, roleTitle, salary, employeeId, firstName, lastName, mgrIdNum)
+        console.log(name, deptId, roleId, roleTitle, salary, employeeId, firstName, lastName, mgrId)
 
         switch (type) {
             case "Engineer":
                 const engineer = new Engineer
-                (name, deptId, roleId, roleTitle, salary, employeeId, firstName, lastName, mgrIdNum)
+                (name, deptId, roleId, roleTitle, salary, employeeId, firstName, lastName, mgrId)
                 break;
             case "Manager":
                 const manager = new Manager
@@ -185,7 +186,7 @@ function init() {
                 break;
             case "Intern":
                 const intern = new Intern
-                (name, deptId, roleId, roleTitle, salary, employeeId, firstName, lastName, mgrIdNum)
+                (name, deptId, roleId, roleTitle, salary, employeeId, firstName, lastName, mgrId)
                 break;
         }
     })
