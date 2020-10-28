@@ -25,8 +25,7 @@
             // manager_id- INT to hold reference to another employee that manager of the current employee. This field may be null if the employee has no manager
 
     // Create a command-line application (Inquirer) for User input
-    // Write code to use inquirer to gather information about the development team members,
-        // create objects for each team member
+        // create 
         // Add departments, roles, employees
         // View departments, roles, employees
         // Update employee roles
@@ -71,6 +70,7 @@ var connection = mysql.createConnection({
   });
   
   function afterConnection() {
+    init()
     connection.query("SELECT * FROM ", function(err, res) {
       if (err) throw err;
       console.log(res);
@@ -78,115 +78,62 @@ var connection = mysql.createConnection({
     });
   }
 
-// Write code to use inquirer to gather information about the development team members
+// Write code to use inquirer to ask questions 
+    // What would you like to do?
+        // View departments, roles and employees
+        // Add departments, roles and employees
+        // Update employee roles
 //=================================================
 
-// Array of questions for each employee
-    // Department Name
-    // Department Id
-    // Role Id
-    // Role title
-    // Role salary
-    // Employee Id
-    // Employee first name
-    // Employee last name
-    // Employee's Manager Id
 
-    const questions = [ {
 
-        type: "input",
-        message: "What department do you work in?",
-        name: "name",
-        },
-    {
-        type: "input",
-        message: "What is your department id?",
-        number: "deptId",
-        },
-    {
-        type: "input",
-        message: "What is your Role Id",
-        number: "roleId",
-        },
-    {
-        message: "What is your Role Title?",
-        type: 'list',
-        choices: [
-            "Engineer",
-            "Manager",
-            "Intern"
-        ],
-        name: "roleTitle"
-    },
-    {
-        type: "input",
-        message: "What is your Salary?",
-        number: "salary",
-        },
-    {
-        type: "input",
-        message: "What is your Employee Id",
-        number: "employeeId",
-        },
-    {
-        type: "input",
-        message: "What is your Employee Id",
-        number: "employeeId",
-        },
-    {
-        type: "input",
-        message: "What is your first name",
-        name: "firstName",
-        },
-        {
-        type: "input",
-        message: "What is your last name",
-        name: "lastName",
-        },
-    {
-        type: "input",
-        message: "What is your Manager's Id number?",
-        number: "mgrId",
-        },
+const questions = [ {
 
-];
+    type: "list",
+    message: "What do you want to do?",
+    name: "program",
+    choices: [
+        "View all employees",
+        "View all employees by department",
+        "View all employees by role",
+        "Add employee",
+        "Add employee by department",
+        "Add employee role",
+        "Update employee",
+    ]
+}];
 
-// create object for all employees
-
-// function to write to file
-function writeToFile(fileName, data) {
-    fs.writeFileSync(fileName, data)
-} 
 
 
 function init() {
     inquirer.prompt(questions)
     .then(({
-        name,
-        deptId,
-        roleId,
-        roleTitle,
-        salary,
-        employeeId,
-        firstName,
-        lastName,
-        mgrId
+        program
     }) => {
 
-        console.log(name, deptId, roleId, roleTitle, salary, employeeId, firstName, lastName, mgrId)
+        console.log(program)
 
-        switch (type) {
-            case "Engineer":
-                const engineer = new Engineer
-                (name, deptId, roleId, roleTitle, salary, employeeId, firstName, lastName, mgrId)
+        switch (program) {
+            case "View all employees":
+                viewAllEmployees()
                 break;
-            case "Manager":
-                const manager = new Manager
-                (name, deptId, roleId, roleTitle, salary, employeeId, firstName, lastName)
+            case "View all employees by department":
+                viewEmployeesDept()
                 break;
-            case "Intern":
-                const intern = new Intern
-                (name, deptId, roleId, roleTitle, salary, employeeId, firstName, lastName, mgrId)
+            case "View all employees by role":
+                viewEmployeesRole()
+                break;
+            case "Add employee":
+                viewAddEmployee()
+                break;
+            case "Add employee by department":
+                viewAddEmployeeDept()
+                break;
+            case "Add employee role":
+                viewAddEmployee()
+                break; 
+            case "Update employee":
+                viewAddEmployee()
                 break;
         }
     })
