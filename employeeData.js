@@ -109,35 +109,35 @@ function init() {
 
         console.log(program)
 
-        // switch (program) {
-        //     case "View all employees":
-        //         viewAllEmployees()
-        //         break;
-        //     case "View all employees by department":
-        //         viewEmployeesDept()
-        //         break;
-        //     case "View all employees by role":
-        //         viewEmployeesRole()
-        //         break;
-        //     case "Add employee":
-        //         viewAddEmployee()
-        //         break;
-        //     case "Add employee by department":
-        //         viewAddEmployeeDept()
-        //         break;
-        //     case "Add employee role":
-        //         viewAddEmployee()
-        //         break; 
-        //     case "Update employee":
-        //         viewAddEmployee()
-        //         break;
-        // }
+        switch (program) {
+            case "View all employees":
+                viewAllEmployees()
+                break;
+            case "View all employees by department":
+                viewEmployeesDept()
+                break;
+            case "View all employees by role":
+                viewEmployeesRole()
+                break;
+            case "Add employee":
+                viewAddEmployee()
+                break;
+            case "Add employee by department":
+                viewAddEmployeeDept()
+                break;
+            case "Add employee role":
+                viewAddEmployee()
+                break; 
+            case "Update employee":
+                viewAddEmployee()
+                break;
+        }
     })
 }
 
 
-    // connection.query("SELECT * FROM ", function(err, res) {
-    // if (err) throw err;
-    // console.log(res);
-    // connection.end();
-    // });
+    connection.query("SELECT * FROM employee", function(err, res) {
+    if (err) throw err;
+    console.table(res);
+    connection.end();
+    });
