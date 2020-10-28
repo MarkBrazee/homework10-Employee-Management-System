@@ -60,7 +60,7 @@ var connection = mysql.createConnection({
   
     // Your password
     password: "2005*alyKat",
-    database: "employeeDB"
+    database: "employee_db"
   });
   
   connection.connect(function(err) {
@@ -71,11 +71,7 @@ var connection = mysql.createConnection({
   
   function afterConnection() {
     init()
-    connection.query("SELECT * FROM ", function(err, res) {
-      if (err) throw err;
-      console.log(res);
-      connection.end();
-    });
+    
   }
 
 // Write code to use inquirer to ask questions 
@@ -113,31 +109,35 @@ function init() {
 
         console.log(program)
 
-        switch (program) {
-            case "View all employees":
-                viewAllEmployees()
-                break;
-            case "View all employees by department":
-                viewEmployeesDept()
-                break;
-            case "View all employees by role":
-                viewEmployeesRole()
-                break;
-            case "Add employee":
-                viewAddEmployee()
-                break;
-            case "Add employee by department":
-                viewAddEmployeeDept()
-                break;
-            case "Add employee role":
-                viewAddEmployee()
-                break; 
-            case "Update employee":
-                viewAddEmployee()
-                break;
-        }
+        // switch (program) {
+        //     case "View all employees":
+        //         viewAllEmployees()
+        //         break;
+        //     case "View all employees by department":
+        //         viewEmployeesDept()
+        //         break;
+        //     case "View all employees by role":
+        //         viewEmployeesRole()
+        //         break;
+        //     case "Add employee":
+        //         viewAddEmployee()
+        //         break;
+        //     case "Add employee by department":
+        //         viewAddEmployeeDept()
+        //         break;
+        //     case "Add employee role":
+        //         viewAddEmployee()
+        //         break; 
+        //     case "Update employee":
+        //         viewAddEmployee()
+        //         break;
+        // }
     })
 }
 
-// function call to initialize program
-init();
+
+    // connection.query("SELECT * FROM ", function(err, res) {
+    // if (err) throw err;
+    // console.log(res);
+    // connection.end();
+    // });
