@@ -42,7 +42,7 @@
 
 // Create js file for Inquirer and comnection functions.
 
-const inquirer = require("inquirer")
+const inquirer = require("inquirer");
 const fs = require("fs");
         
 var mysql = require("mysql");
@@ -99,8 +99,6 @@ const questions = [ {
     ]
 }];
 
-
-
 function init() {
     inquirer.prompt(questions)
     .then(({
@@ -131,13 +129,24 @@ function init() {
             case "Update employee":
                 viewAddEmployee()
                 break;
-        }
-    })
-}
+        };
+    });
+};
 
-
-    connection.query("SELECT * FROM employee", function(err, res) {
+function viewAllEmployees() {
+connection.query("SELECT * FROM employee", 
+    function(err, res) {
     if (err) throw err;
     console.table(res);
     connection.end();
     });
+}
+
+function viewEmployeesDept() {
+    connection.query("SELECT * FROM employee", 
+        function(err, res) {
+        if (err) throw err;
+        console.table(res);
+        connection.end();
+        });
+    }
