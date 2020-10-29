@@ -143,10 +143,19 @@ connection.query("SELECT * FROM employee",
 }
 
 function viewEmployeesDept() {
-    connection.query("SELECT * FROM employee", 
-        function(err, res) {
-        if (err) throw err;
-        console.table(res);
-        connection.end();
-        });
-    }
+connection.query("SELECT department.name FROM department", 
+    function(err, res) {
+    if (err) throw err;
+    console.table(res);
+    connection.end();
+    });    
+}
+
+function viewEmployeesDept() {
+connection.query("SELECT department.name FROM department", 
+    function(err, res) {
+    if (err) throw err;
+    console.table(res);
+    connection.end();
+    });    
+}
