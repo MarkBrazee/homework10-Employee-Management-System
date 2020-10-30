@@ -44,6 +44,7 @@
 
 const inquirer = require("inquirer");
 const fs = require("fs");
+const consoleTable = require("console.table");
         
 var mysql = require("mysql");
 
@@ -137,7 +138,7 @@ function viewAllEmployees() {
 connection.query("SELECT * FROM employee", 
     function(err, res) {
     if (err) throw err;
-    console.table(res);
+    consoleTable(res);
     connection.end();
     });
 }
