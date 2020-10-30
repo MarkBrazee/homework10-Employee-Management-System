@@ -100,6 +100,9 @@ const questions = [ {
     ]
 }];
 
+
+// Prompt question in the command line
+
 function init() {
     inquirer.prompt(questions)
     .then(({
@@ -125,23 +128,88 @@ function init() {
                 viewAddEmployeeDept()
                 break;
             case "Add employee role":
-                viewAddEmployee()
+                viewAddEmployeeRole()
                 break; 
             case "Update employee":
-                viewAddEmployee()
+                viewUpdateEmployee()
                 break;
         };
     });
 };
 
+// Connection queries from MySQL database
+
 function viewAllEmployees() {
 connection.query("SELECT * FROM employee", 
     function(err, res) {
     if (err) throw err;
-    consoleTable(res);
+    console.table(res);
     connection.end();
     });
 }
 
+// Working on correct connection query
 
+function viewEmployeesDept() {
+connection.query("SELECT * FROM employee", 
+    function(err, res) {
+    if (err) throw err;
+    console.table(res);
+    connection.end();
+    });
+}
 
+// Working on correct connection query
+
+function viewEmployeesRole() {
+connection.query("SELECT * FROM employee", 
+    function(err, res) {
+    if (err) throw err;
+    console.table(res);
+    connection.end();
+    });
+}
+
+// Working on correct connection query
+
+function viewAddEmployee() {
+connection.query("SELECT * FROM employee", 
+    function(err, res) {
+    if (err) throw err;
+    console.table(res);
+    connection.end();
+    });
+}
+
+// Working on correct connection query
+
+function viewAddEmployeeDept() {
+connection.query("SELECT * FROM employee", 
+    function(err, res) {
+    if (err) throw err;
+    console.table(res);
+    connection.end();
+    });
+}
+
+// Working on correct connection query
+
+function viewAddEmployeeRole() {
+connection.query("SELECT * FROM employee", 
+    function(err, res) {
+    if (err) throw err;
+    console.table(res);
+    connection.end();
+    });
+}
+
+// Working on correct connection query
+
+function viewUpdateEmployee() {
+connection.query("SELECT * FROM employee", 
+    function(err, res) {
+    if (err) throw err;
+    console.table(res);
+    connection.end();
+    });
+}
