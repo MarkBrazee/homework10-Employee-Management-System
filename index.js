@@ -151,11 +151,3 @@ connection.query("SELECT department.name FROM department",
     });    
 }
 
-function viewEmployeesDept() {
-connection.query("SELECT department.name FROM department", 
-    function(err, res) {
-    if (err) throw err;
-    console.table(res);
-    connection.end();
-    });    
-}
