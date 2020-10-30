@@ -23,7 +23,7 @@ n/a
 
 ### Link to Usage Video:
 
-http://www.github.com/MarkBrazee/homework07/blob/main/employee_tracker.gif
+https://github.com/MarkBrazee/homework10_Employee_Management_System/blob/main/employee_tracker.gif
 
 ### Questions? 
 
