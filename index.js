@@ -59,7 +59,7 @@ var connection = mysql.createConnection({
     user: "root",
   
     // Your password
-    password: "2005*alyKat",
+    password: "2020*Brazee",
     database: "employee_db"
   });
   
@@ -142,12 +142,5 @@ connection.query("SELECT * FROM employee",
     });
 }
 
-function viewEmployeesDept() {
-connection.query("SELECT department.name FROM department", 
-    function(err, res) {
-    if (err) throw err;
-    console.table(res);
-    connection.end();
-    });    
-}
+
 

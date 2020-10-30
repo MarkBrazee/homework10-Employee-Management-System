@@ -1,6 +1,6 @@
-const department = require("./department.sql");
-const role = require("./role.sql");
-const employee = require("./employee.sql");
+const department = require("./department.csv");
+const role = require("./role.csv");
+const employee = require("./employee.csv");
 
 DROP DATABASE IF EXISTS employee_db;
 
